@@ -55,11 +55,11 @@ class app:
 
             if inCircle:
                 pointsInCircle+=1
-                if i%100==0:
+                if i%(numPoints/1000)==0:
                     self.canvas.create_oval(x*300-10, y*300-10, x*300, y*300, fill="#33FF00")
             else:
                 pointsOutCircle += 1
-                if i%100==0:
+                if i%(numPoints/1000)==0:
                     self.canvas.create_oval(x*300-10, y*300-10, x*300, y*300, fill="#FF0000")
 
         pi = (pointsInCircle*4)/numPoints
