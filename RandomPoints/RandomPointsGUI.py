@@ -26,7 +26,7 @@ class app:
         self.canvas = tk.Canvas(self.root, background="#d3ddfa", width=300, height=300)
         self.canvas.pack()
 
-        self.canvas.create_oval(2,2,300,300,outline="#0000ff")
+        self.canvas.create_oval(-300,-300,300,300,outline="#0000ff")
         self.canvas.create_rectangle(2,2,300,300, outline="#0000ff")
 
         self.outputLabel = tk.Label(self.root, text="Points tested:  \nApproximation of Pi: " )
@@ -40,7 +40,7 @@ class app:
     def estimatePi(self):
         numPoints = self.textInput.get(1.0, "end-1c")
         try:
-            numPoints = int(numPoints)
+            numPoints = abs(int(numPoints))
         except:
             messagebox.showerror("Error", "Error: Invalid input for Number of points")
 
@@ -56,11 +56,11 @@ class app:
             if inCircle:
                 pointsInCircle+=1
                 if i%100==0:
-                    self.canvas.create_oval(x*300, y*300, x*300+10, y*300+10, fill="#33FF00")
+                    self.canvas.create_oval(x*300-10, y*300-10, x*300, y*300, fill="#33FF00")
             else:
                 pointsOutCircle += 1
                 if i%100==0:
-                    self.canvas.create_oval(x*300, y*300, x*300+10, y*300+10, fill="#FF0000")
+                    self.canvas.create_oval(x*300-10, y*300-10, x*300, y*300, fill="#FF0000")
 
         pi = (pointsInCircle*4)/numPoints
 

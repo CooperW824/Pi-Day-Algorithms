@@ -44,5 +44,5 @@ def estimatePi(numPoints):
 
     
 
-estimatePi(10000000)
+estimatePi(int(input("Enter Number of Points to test: ")))
 
