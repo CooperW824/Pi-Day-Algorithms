@@ -1,2 +1,2 @@
 # Pi-Day-Algorithms
- Approximately pi number of algorithims to apporximate pi
+ Approximately pi number of algorithms to approximate pi
